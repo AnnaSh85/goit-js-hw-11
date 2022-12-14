@@ -94,5 +94,5 @@ function parseData(response) {
 
   gallery.insertAdjacentHTML('beforeend', markup);
 
-  const lightbox = new SimpleLightbox(".gallery a", { captionDelay: 250, captionsData: 'alt' });
+  const lightbox = new SimpleLightbox(".gallery a", { captionDelay: 300, captionsData: 'alt' });
 }
