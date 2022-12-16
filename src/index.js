@@ -7,14 +7,12 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
-
 const form = document.querySelector('#search-form')
 const gallery = document.querySelector('.gallery')
 const loadMore = document.querySelector('.load-more')
 
 form.addEventListener('submit', getValue)
 loadMore.addEventListener('click', getValue)
-
 
 let formValue = ""
 let page = 1
@@ -35,7 +33,6 @@ function getValue(e) {
   formValue = form.elements.searchQuery.value
   apiData(formValue)
 }
-
 
 async function apiData(request) {
   const URL = "https://pixabay.com/api/?key=";
