@@ -34,6 +34,7 @@ function getValue(e) {
   apiData(formValue)
 }
 
+
 async function apiData(request) {
   const URL = "https://pixabay.com/api/?key=";
   const API_KEY = "31959718-480cdd2164520f69972499037";
@@ -47,9 +48,16 @@ async function apiData(request) {
     resultForApi = response.data.total;
     
     parseData(response);
-    loadMore.hidden = false;
+      loadMore.hidden = false;
+      
+
     if (page === 1) {
       Notiflix.Notify.success(`We find ${response.data.total} images`)
+      }
+
+    if (response.data.total <= 40 * page) {
+        Notiflix.Notify.success("We're sorry, but you've reached the end of search results.")
+        loadMore.hidden = true;
     }
     
   })
